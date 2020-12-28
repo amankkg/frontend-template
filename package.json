@@ -2,16 +2,25 @@
   "name": "frontend-template",
   "private": true,
   "scripts": {
-    "clean": "rimraf build"
+    "src:dev": "snowpack dev",
+    "start": "snowpack dev --output stream"
   },
   "dependencies": {
+    "@babel/core": "7.12.10",
+    "@babel/preset-react": "7.12.10",
+    "@emotion/babel-plugin": "11.1.2",
+    "@emotion/react": "11.1.4",
+    "@emotion/styled": "11.0.0",
     "@material-ui/core": "5.0.0-alpha.20",
     "@material-ui/icons": "5.0.0-alpha.20",
+    "@snowpack/plugin-babel": "2.1.5",
     "@snowpack/plugin-dotenv": "2.0.5",
     "@snowpack/plugin-react-refresh": "2.3.9",
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.0",
     "@types/snowpack-env": "2.3.3",
+    "babel-plugin-macros": "3.0.1",
+    "dotenv": "8.2.0",
     "history": "5.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",

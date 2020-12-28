@@ -16,6 +16,7 @@
     "allowSyntheticDefaultImports": true,
     "importsNotUsedAsValues": "error",
     "jsx": "react-jsx",
+    "lib": ["ES2015", "DOM"],
   },
   "exclude": ["node_modules", "build", "public"]
 }
