@@ -19,5 +19,10 @@ module.exports = {
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-babel',
   ],
-  install: ['react/jsx-runtime', '@emotion/styled/base'],
+  install: ['react/jsx-runtime'],
+  alias: {
+    '@emotion/styled': '@emotion/styled/base',
+    atoms: './atoms',
+    pages: './pages',
+  },
 }
