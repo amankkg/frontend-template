@@ -2,3 +2,5 @@ node_modules
 web_modules
 build
 .build
+.env
+locales/*.mjs

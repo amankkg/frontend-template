@@ -1,60 +1,34 @@
-import {CssBaseline, IconButton, TextField} from '@material-ui/core'
-import {useRef, useState} from 'react'
-import {NavLink, useNavigate, useRoutes} from 'react-router-dom'
+import {CssBaseline} from '@material-ui/core'
+import {useEffect, useState} from 'react'
+import {useRoutes} from 'react-router-dom'
 import {H1, MyButton} from 'atoms'
 import {routeConfig} from './route-config'
-import styled from '@emotion/styled'
-import {NavigateNext} from '@material-ui/icons'
+import {t} from '@lingui/macro'
+import {I18nProvider} from '@lingui/react'
+import {i18n} from '@lingui/core'
+import {dynamicActivate} from './i18n'
+import {NavMenu} from './nav-menu'
 
 export const App = () => {
   const [count, setCount] = useState(0)
-  const routeElement = useRoutes(routeConfig)
-  const navigate = useNavigate()
-  const navRef = useRef('')
+  const [locale, setLocale] = useState<Locale>('en')
+  const pageElement = useRoutes(routeConfig)
 
-  const navigateNext = () => navigate(navRef.current)
+  useEffect(() => {
+    dynamicActivate(locale)
+  }, [locale])
+
   const onClick = () => setCount((x) => x - 5)
 
   return (
-    <>
+    <I18nProvider i18n={i18n}>
       <CssBaseline />
-      <Nav>
-        <MyLink to="a">Go to Page A</MyLink>
-        <MyLink to="b">Go to Page B</MyLink>
-        <MyTextField
-        size="small"
-          onChange={(event) => (navRef.current = event.target.value)}
-          InputProps={{
-            endAdornment: (
-              <IconButton onClick={navigateNext}>
-                <NavigateNext />
-              </IconButton>
-            ),
-          }}
-          onKeyPress={(event) => {
-            if (event.key === 'Enter') navigateNext()
-          }}
-          label="pathname to navigate"
-        />
-      </Nav>
-      {routeElement}
+      <NavMenu locale={locale} setLocale={setLocale} />
+      {pageElement}
       <H1>Hello world! {count}</H1>
       <MyButton onClick={onClick} variant="outlined" color="primary">
-        increment
+        {t`increment`}
       </MyButton>
-    </>
+    </I18nProvider>
   )
 }
-
-const MyLink = styled(NavLink)`
-  margin: 0 10px;
-`
-
-const MyTextField = styled(TextField)`
-  margin: 5px;
-`
-
-const Nav = styled.nav`
-  display: flex;
-  align-items: center
-`
