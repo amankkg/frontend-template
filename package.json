@@ -1,10 +1,6 @@
 {
   "name": "frontend-template",
   "private": true,
-  "scripts": {
-    "src:dev": "snowpack dev",
-    "start": "snowpack dev --output stream"
-  },
   "dependencies": {
     "@babel/core": "7.12.10",
     "@babel/preset-react": "7.12.10",
@@ -12,6 +8,7 @@
     "@emotion/babel-plugin": "11.1.2",
     "@emotion/react": "11.1.4",
     "@emotion/styled": "11.0.0",
+    "@hookform/resolvers": "1.3.1",
     "@lingui/cli": "3.3.0",
     "@lingui/core": "3.3.0",
     "@lingui/macro": "3.3.0",
@@ -29,10 +26,12 @@
     "history": "5.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-hook-form": "6.14.0",
     "react-router": "6.0.0-beta.0",
     "react-router-dom": "6.0.0-beta.0",
     "snowpack": "3.0.0-rc.2",
-    "typescript": "4.1.3"
+    "typescript": "4.1.3",
+    "zod": "2.0.0-beta.29"
   },
   "lingui": {
     "locales": [

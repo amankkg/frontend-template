@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "confirm password"
+msgstr "Сыр сөздү ырастоо"
+
 msgid "go to page a"
 msgstr "А бет"
 
@@ -22,14 +25,32 @@ msgstr "Б бет"
 msgid "increment"
 msgstr "Көбөйтүү"
 
+msgid "login"
+msgstr "Логин"
+
+msgid "login is too short"
+msgstr "Логин кыска"
+
 msgid "not found"
 msgstr "Барак табылган жок"
 
 msgid "page a content"
-msgstr "А бетине кош келдиңиз"
+msgstr "А бетине кош келиңиз"
 
 msgid "page b content"
-msgstr "Б бетине кош келдиңиз"
+msgstr "Б бетине кош келиңиз"
+
+msgid "password"
+msgstr "Сыр сөз"
+
+msgid "password is too short"
+msgstr "Сыр сөз кыска"
+
+msgid "passwords don't match"
+msgstr "Сыр сөз окшошпойт"
 
 msgid "pathname to navigate"
 msgstr "...баракка өтүү"
+
+msgid "submit"
+msgstr "Тапшыруу"

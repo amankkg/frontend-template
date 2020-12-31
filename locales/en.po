@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "confirm password"
+msgstr "Confirm password"
+
 msgid "go to page a"
 msgstr "Page A"
 
@@ -21,6 +24,12 @@ msgstr "Page B"
 
 msgid "increment"
 msgstr "Increment"
+
+msgid "login"
+msgstr "Login"
+
+msgid "login is too short"
+msgstr "Login is too short"
 
 msgid "not found"
 msgstr "Page not found"
@@ -31,5 +40,17 @@ msgstr "Welcome to Page A"
 msgid "page b content"
 msgstr "Welcome to Page B"
 
+msgid "password"
+msgstr "Password"
+
+msgid "password is too short"
+msgstr "Password is too short"
+
+msgid "passwords don't match"
+msgstr "Passwords do not match"
+
 msgid "pathname to navigate"
 msgstr "Navigate to..."
+
+msgid "submit"
+msgstr "Submit"
