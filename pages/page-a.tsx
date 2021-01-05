@@ -2,12 +2,12 @@ import {defineMessage, t} from '@lingui/macro'
 import {H1} from 'atoms'
 import {useForm} from 'react-hook-form'
 import * as z from 'zod'
-import zz from '@hookform/resolvers/zod' // TODO: ESM modules to be supported
+import {zodResolver} from '@hookform/resolvers/zod'
 import {Button, TextField} from '@material-ui/core'
 import styled from '@emotion/styled'
 
 export const PageA = () => {
-  const form = useForm({resolver: zz.zodResolver(schema)})
+  const form = useForm({resolver: zodResolver(schema)})
 
   const onSubmit = form.handleSubmit((data) => {
     console.log(data)
