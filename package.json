@@ -18,6 +18,7 @@
     "@material-ui/icons": "5.0.0-alpha.20",
     "@snowpack/plugin-babel": "2.1.5",
     "@snowpack/plugin-dotenv": "2.0.5",
+    "@snowpack/plugin-optimize": "0.2.10",
     "@snowpack/plugin-react-refresh": "2.3.9",
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.0",

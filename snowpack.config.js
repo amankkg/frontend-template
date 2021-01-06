@@ -10,6 +10,21 @@ module.exports = {
     '.': '/dist',
     public: '/',
   },
+  exclude: [
+    'node_modules',
+    '.env',
+    '.example.env',
+    '.gitignore',
+    '.npmrc',
+    'babel.config.json',
+    'LICENSE',
+    'package-lock.json',
+    'package.json',
+    'README.md',
+    'snowpack.config.js',
+    'tsconfig.dev.json',
+    'tsconfig.json'
+  ],
   devOptions: {
     port: parseInt(PORT),
     open: BROWSER,
@@ -19,6 +34,7 @@ module.exports = {
     '@snowpack/plugin-react-refresh',
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-babel',
+    '@snowpack/plugin-optimize',
   ],
   install: ['react/jsx-runtime'],
   alias: {
