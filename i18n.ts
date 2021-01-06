@@ -4,11 +4,11 @@ const loadMessages = (locale: Locale) => {
   switch (locale) {
     case 'ky':
       // @ts-expect-error
-      return import('./locales/ky.mjs')
+      return import('./locales/ky.po')
     case 'en':
     default:
       // @ts-expect-error
-      return import('./locales/en.mjs')
+      return import('./locales/en.po')
   }
 }
 
