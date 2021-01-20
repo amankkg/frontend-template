@@ -23,7 +23,7 @@ module.exports = {
     'README.md',
     'snowpack.config.js',
     'tsconfig.dev.json',
-    'tsconfig.json'
+    'tsconfig.json',
   ],
   devOptions: {
     port: parseInt(PORT),
@@ -36,7 +36,7 @@ module.exports = {
     '@snowpack/plugin-babel',
     '@snowpack/plugin-optimize',
   ],
-  install: ['react/jsx-runtime'],
+  packageOptions: {knownEntrypoints: ['react/jsx-runtime']},
   alias: {
     '@emotion/styled': '@emotion/styled/base',
     atoms: './atoms',
