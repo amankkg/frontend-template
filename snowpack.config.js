@@ -30,7 +30,7 @@ module.exports = {
     open: BROWSER,
   },
   plugins: [
-    './lingui-snowpack-plugin.js',
+    '@lingui/snowpack-plugin',
     '@snowpack/plugin-react-refresh',
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-babel',
