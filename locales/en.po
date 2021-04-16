@@ -22,6 +22,9 @@ msgstr "Page A"
 msgid "go to page b"
 msgstr "Page B"
 
+msgid "go to home page"
+msgstr "Home"
+
 msgid "increment"
 msgstr "Increment"
 

@@ -1,16 +1,16 @@
-import {t} from '@lingui/macro'
-import {Autocomplete, IconButton, TextField} from '@material-ui/core'
+import { t } from '@lingui/macro'
+import { Autocomplete, IconButton, TextField } from '@material-ui/core'
 import styled from '@emotion/styled'
-import {NavLink, useNavigate} from 'react-router-dom'
-import {useRef} from 'react'
-import {NavigateNext} from '@material-ui/icons'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useRef } from 'react'
+import { NavigateNext } from '@material-ui/icons'
 
 type Props = {
   locale: Locale
   setLocale: (locale: Locale) => void
 }
 
-export const NavMenu = ({locale, setLocale}: Props) => {
+export const NavMenu = ({ locale, setLocale }: Props) => {
   const navigate = useNavigate()
   const navRef = useRef('')
 
@@ -18,6 +18,7 @@ export const NavMenu = ({locale, setLocale}: Props) => {
 
   return (
     <Nav>
+      <MyLink to="/">{t`go to home page`}</MyLink>
       <MyLink to="a">{t`go to page a`}</MyLink>
       <MyLink to="b">{t`go to page b`}</MyLink>
       <MyTextField

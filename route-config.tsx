@@ -1,7 +1,8 @@
-import {NotFound, PageA, PageB} from 'pages'
+import { NotFound, PageA, PageB, Home } from 'pages'
 
 export const routeConfig = [
-  {path: 'a', element: <PageA />},
-  {path: 'b', element: <PageB />},
-  {path: '*', element: <NotFound />},
+  { path: '/', element: <Home /> },
+  { path: '/a', element: <PageA /> },
+  { path: '/b', element: <PageB /> },
+  { path: '/*', element: <NotFound /> }
 ]
