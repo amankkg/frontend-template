@@ -1,3 +1,5 @@
 export {PageA} from './page-a'
 export {PageB} from './page-b'
 export {NotFound} from './not-found'
+export {Users} from './Users'
+export {UserPage} from './UserPage'

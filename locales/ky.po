@@ -54,3 +54,33 @@ msgstr "...баракка өтүү"
 
 msgid "submit"
 msgstr "Тапшыруу"
+
+msgid "users page"
+msgstr "Колдонуучулар"
+
+msgid "firstName"
+msgstr "Аты"
+
+msgid "lastName"
+msgstr "Фамилиясы"
+
+msgid "email"
+msgstr "Почтасы"
+
+msgid "phone"
+msgstr "Телефон номери"
+
+msgid "new user"
+msgstr "Жаңы колдонуучу"
+
+msgid "users"
+msgstr "Колдонуучулар"
+
+msgid "add user"
+msgstr "Кошуу"
+
+msgid "edit user"
+msgstr "Өзгөртүү"
+
+msgid "remove user"
+msgstr "Өчүрүү"

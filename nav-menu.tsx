@@ -20,6 +20,7 @@ export const NavMenu = ({locale, setLocale}: Props) => {
     <Nav>
       <MyLink to="a">{t`go to page a`}</MyLink>
       <MyLink to="b">{t`go to page b`}</MyLink>
+      <MyLink to="users">{t`users page`}</MyLink>
       <MyTextField
         size="small"
         onChange={(event) => (navRef.current = event.target.value)}
