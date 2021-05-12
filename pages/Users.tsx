@@ -9,7 +9,7 @@ import { defineMessage, t } from '@lingui/macro'
 import { NavLink } from 'react-router-dom'
 
 export interface IUser {
-    id: number
+    id: string
     firstName: string
     lastName: string
     email: string
@@ -17,20 +17,27 @@ export interface IUser {
     avatar?: string
 }
 
+const generateID = () => {
+    const randomHex = () => Math
+            .floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+
+    return `${randomHex()}-${randomHex()}-${randomHex()}-${randomHex()}`
+}
+
 export const Users = () => {
     const [usersList, setUsersList] = useState<IUser[]>([])
     const [isUserCreationModalOpen, setIsUserCreationModalOpen] = useState(false)
-    const [iterator, setIterator] = useState<number>()
     const [currentUserData, setCurrentUserData] = useState<IUser | null>(null)
 
     const form = useForm({ resolver: zodResolver(schema) })
-
+    console.log(generateID())
     const handleModalClose = () => {
         setCurrentUserData(null)
         setIsUserCreationModalOpen(false)
     }
     const handleModalOpen = () => setIsUserCreationModalOpen(true)
-    const generatorRef = useRef<any>(null)
 
     const getUsers = () => {
         const usersFromLS = localStorage.getItem('users')
@@ -38,7 +45,7 @@ export const Users = () => {
     }
 
     const createUser = form.handleSubmit(async formData => {
-        setUsersList([...usersList, { ...formData, id: generatorRef.current.next().value }])
+        setUsersList([...usersList, { ...formData, id: generateID() }])
         handleModalClose()
     })
 
@@ -56,7 +63,7 @@ export const Users = () => {
         handleModalClose()
     })
 
-    const removeUser = (id: number) => {
+    const removeUser = (id: string) => {
         setUsersList(usersList.filter(user => user.id !== id))
     }
 
@@ -64,12 +71,6 @@ export const Users = () => {
 
     useEffect(() => {
         getUsers()
-        function* generateId() {
-            let index = 0;
-            while (index < 100)
-                yield index++;
-        }
-        generatorRef.current = generateId()
     }, [])
     useEffect(() => {
         if (usersList) {
@@ -141,6 +142,7 @@ export const Users = () => {
                         error={!!form.errors.phone}
                         helperText={form.errors.phone?.message}
                         label={t`phone`}
+                        placeholder='0555 555 555'
                         defaultValue={currentUserData?.phone}
                     />
                     <Button type="submit" variant="outlined">{t`submit`}</Button>
@@ -155,7 +157,7 @@ const schema = z
         firstName: z.string().min(3, defineMessage({ id: 'firstName is too short' }).id),
         lastName: z.string().min(3, defineMessage({ id: 'lastName is too short' }).id),
         email: z.string().email('Incorrect email address'),
-        phone: z.string(),
+        phone: z.string().refine((value) => /^0\d{9}$/i.test(value), { message: 'Неправильно введен номер телефона' }),
     })
 
 const User = styled.div`
