@@ -21,8 +21,7 @@ const generateID = () => {
     const randomHex = () => Math
         .floor((1 + Math.random()) * 0x10000)
         .toString(16)
-        .substring(1);
-
+        .substring(1)
     return `${randomHex()}-${randomHex()}-${randomHex()}-${randomHex()}`
 }
 
@@ -32,7 +31,7 @@ export const Users = () => {
     const [currentUserData, setCurrentUserData] = useState<IUser | null>(null)
 
     const form = useForm({ resolver: zodResolver(schema) })
-    console.log(generateID())
+
     const handleModalClose = () => {
         setCurrentUserData(null)
         setIsUserCreationModalOpen(false)
@@ -97,7 +96,6 @@ export const Users = () => {
                     </User>
                 ))}
             </div>
-
             <UserModal
                 isUserCreationModalOpen={isUserCreationModalOpen}
                 handleModalClose={handleModalClose}
