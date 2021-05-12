@@ -54,3 +54,33 @@ msgstr "Navigate to..."
 
 msgid "submit"
 msgstr "Submit"
+
+msgid "users page"
+msgstr "Users"
+
+msgid "firstName"
+msgstr "First name"
+
+msgid "lastName"
+msgstr "Last name"
+
+msgid "email"
+msgstr "Email"
+
+msgid "phone"
+msgstr "Phone"
+
+msgid "new user"
+msgstr "New user"
+
+msgid "users"
+msgstr "Users"
+
+msgid "add user"
+msgstr "Add user"
+
+msgid "edit user"
+msgstr "Edit"
+
+msgid "remove user"
+msgstr "Remove"
